@@ -1,5 +1,6 @@
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemylong : MonoBehaviour
 {
@@ -9,6 +10,19 @@ public class Enemylong : MonoBehaviour
     public GameObject bullet;
     public Transform spawnPos;
     public float EnemyHP = 100f;
+
+    public float maxHP = 100f;
+    public Slider slider;
+
+
+    void Start()
+    {
+        if (slider != null)
+        {
+            slider.maxValue = maxHP;
+            slider.value = EnemyHP;
+        }
+    }
 
 
 
@@ -41,6 +55,7 @@ public class Enemylong : MonoBehaviour
     public void Enemy_Damages(float Damages)
     {
         EnemyHP -= Damages;
+        slider.value = Mathf.Clamp(EnemyHP, 0f, maxHP);
         if (EnemyHP <= 0)
         {
             Destroy(gameObject);
