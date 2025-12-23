@@ -18,7 +18,6 @@ public class PlayerCont : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-
     public bool isAuto;
 
     void Awake()
@@ -35,8 +34,6 @@ public class PlayerCont : MonoBehaviour
 
     void Update()
     {
-        
-
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
         inputDir = new Vector3(x, 0f, z).normalized;
@@ -53,7 +50,6 @@ public class PlayerCont : MonoBehaviour
             {
                 ShootNearestMonster();
             }
-            
 
            
         }

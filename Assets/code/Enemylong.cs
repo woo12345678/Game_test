@@ -24,11 +24,6 @@ public class Enemylong : MonoBehaviour
         }
     }
 
-
-
-
-
-
     void Update()
     {
 
@@ -50,7 +45,6 @@ public class Enemylong : MonoBehaviour
         if (target != null)
             b.transform.LookAt(target.position);
     }
-
 
     public void Enemy_Damages(float Damages)
     {

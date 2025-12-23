@@ -67,9 +67,7 @@ public class Enemyclose : MonoBehaviour
     }
 
     public void OnCollisionStay(Collision collision) //계속 붙어있을때 데미지 주기위함
-    {
-       
-        
+    { 
         if (collision.gameObject.tag == "Player")
         {
             AttackTime += Time.deltaTime;
@@ -81,12 +79,7 @@ public class Enemyclose : MonoBehaviour
 
 
             }
-           
-            
-
         }
-
-
     }
 
     public void OnCollisionExit(Collision collision)
