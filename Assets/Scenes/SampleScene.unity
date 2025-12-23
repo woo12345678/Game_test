@@ -2753,7 +2753,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 666518242171841434, guid: 9c03703041e90064d84795a35d5a2060, type: 3}
       propertyPath: m_Name
-      value: Capsule
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 1240720252878130673, guid: 9c03703041e90064d84795a35d5a2060, type: 3}
       propertyPath: m_Color.b
