@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Enemyclose : MonoBehaviour
 {
-    public Transform target;      // 플레이어
+    public Transform target;      
     public float speed = 4f;
     public PlayerCont player;
     public float AttackTime;
@@ -30,7 +30,7 @@ public class Enemyclose : MonoBehaviour
         t.y = transform.position.y; 
 
         transform.position = Vector3.MoveTowards(transform.position, t, speed * Time.deltaTime);
-        //여기서 초 세고 
+        
         
     }
 
@@ -68,7 +68,7 @@ public class Enemyclose : MonoBehaviour
 
     public void OnCollisionStay(Collision collision) //계속 붙어있을때 데미지 주기위함
     {
-        //여기서 초를 재는게 좋을거 같은데?
+       
         
         if (collision.gameObject.tag == "Player")
         {

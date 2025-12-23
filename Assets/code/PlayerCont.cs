@@ -10,7 +10,7 @@ public class PlayerCont : MonoBehaviour
 
     public float HP = 100f;
     public float maxHP = 100f;
-    public float DamaGesTime = 0f;
+    
 
     public Slider slider;
 
@@ -35,7 +35,7 @@ public class PlayerCont : MonoBehaviour
 
     void Update()
     {
-        DamaGesTime += Time.deltaTime;
+        
 
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
@@ -67,7 +67,7 @@ public class PlayerCont : MonoBehaviour
     }
 
     void ShootToMouseGround()
-    {
+    {//바닥으로 레이케스트를쏴서 마우스 방향으로발사;
         Camera cam = Camera.main;
         if (cam == null || bulletPrefab == null) return;
 
@@ -93,7 +93,7 @@ public class PlayerCont : MonoBehaviour
         if (bullet != null)
         {
             bullet.SetDirection(dir);
-            // bullet.speed = bulletSpeed; 
+            
         }
     }
 
@@ -132,7 +132,7 @@ public class PlayerCont : MonoBehaviour
         if (bullet != null)
         {
             bullet.SetDirection(dir);
-            // bullet.speed = bulletSpeed; 
+             
         }
     }
 

@@ -46,7 +46,7 @@ public class Enemylong : MonoBehaviour
     {
         GameObject b = Instantiate(bullet, spawnPos.position, spawnPos.rotation);
 
-        // 타깃을 향하게 회전
+        
         if (target != null)
             b.transform.LookAt(target.position);
     }
