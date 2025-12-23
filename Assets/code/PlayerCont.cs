@@ -16,8 +16,10 @@ public class PlayerCont : MonoBehaviour
 
     [Header("Shoot")]
     public GameObject bulletPrefab;
-    public Transform firePoint;    
-    
+    public Transform firePoint;
+
+
+    public bool isAuto;
 
     void Awake()
     {
@@ -42,7 +44,18 @@ public class PlayerCont : MonoBehaviour
         // 마우스 클릭하면 발사
         if (Input.GetMouseButtonDown(0))
         {
-            ShootToMouseGround();
+
+            if (!isAuto)
+            {
+                ShootToMouseGround();
+            }
+            else 
+            {
+                ShootNearestMonster();
+            }
+            
+
+           
         }
     }
 
@@ -100,4 +113,51 @@ public class PlayerCont : MonoBehaviour
             Destroy(other.gameObject);
         }
     }
+
+
+
+    void ShootNearestMonster()
+    {
+        GameObject target = FindNearestMonster();
+        if (target == null) return;
+
+        Vector3 firePos = firePoint != null ? firePoint.position : transform.position + Vector3.up * 1f;
+        Vector3 dir = (target.transform.position - firePos);
+        dir.y = 0f; 
+
+        if (dir.sqrMagnitude < 0.01f) return;
+
+        GameObject b = Instantiate(bulletPrefab, firePos, Quaternion.LookRotation(dir));
+        PayerBuillet bullet = b.GetComponent<PayerBuillet>();
+        if (bullet != null)
+        {
+            bullet.SetDirection(dir);
+            // bullet.speed = bulletSpeed; 
+        }
+    }
+
+    
+    GameObject FindNearestMonster()
+    {
+        GameObject[] monsters = GameObject.FindGameObjectsWithTag("Enemy");
+        if (monsters.Length == 0) return null;
+
+        GameObject nearest = null;
+        float minDist = float.MaxValue;
+
+        Vector3 myPos = transform.position;
+
+        foreach (GameObject m in monsters)
+        {
+            float dist = (m.transform.position - myPos).sqrMagnitude;
+            if (dist < minDist)
+            {
+                minDist = dist;
+                nearest = m;
+            }
+        }
+
+        return nearest;
+    }
+
 }

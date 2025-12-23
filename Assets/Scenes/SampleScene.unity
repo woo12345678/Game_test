@@ -1700,7 +1700,7 @@ GameObject:
   - component: {fileID: 1491718217}
   m_Layer: 0
   m_Name: Enemyclose
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1967,7 +1967,7 @@ GameObject:
   - component: {fileID: 1568187158}
   m_Layer: 0
   m_Name: Enemylong
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2234,7 +2234,7 @@ GameObject:
   - component: {fileID: 1870699756}
   m_Layer: 0
   m_Name: Enemyclose (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2773,6 +2773,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1621660283707778971, guid: 9c03703041e90064d84795a35d5a2060, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5639479123300644723, guid: 9c03703041e90064d84795a35d5a2060, type: 3}
+      propertyPath: isAuto
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6082101959965359708, guid: 9c03703041e90064d84795a35d5a2060, type: 3}
